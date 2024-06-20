@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { useGlobalStore } from "../zustand/store";
 import { MdEdit } from "react-icons/md";
 
 const VideoPage = () => {
@@ -10,7 +9,9 @@ const VideoPage = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [buttonContent, setButtonContent] = useState("Add Comment");
-  const { currentUserId } = useGlobalStore();
+  const [currentUserId, setCurrentUserId] = useState(() => {
+    return sessionStorage.getItem("currentUserId") || "";
+  });
 
   useEffect(() => {
     if (!video) {
@@ -19,7 +20,9 @@ const VideoPage = () => {
         `https://take-home-assessment-423502.uc.r.appspot.com/api/videos/${id}`
       )
         .then((response) => response.json())
-        .then((data) => setVideo(data));
+        .then((data) => {
+          setVideo(data);
+        });
     }
 
     getComments();
@@ -123,7 +126,7 @@ const VideoPage = () => {
               {video.title}
             </span>
             <MdEdit
-              className="size-5 mx-1 hover:size-10"
+              className="size-5 mx-1 hover:size-7 cursor-pointer"
               onClick={() => {
                 editDetails();
               }}
@@ -162,7 +165,7 @@ const VideoPage = () => {
               onChange={(e) => setNewComment(e.target.value)}
             ></input>
             <button
-              className="bg-teal-600 w-1/3 text-white rounded-xl"
+              className="bg-teal-600 w-1/3 text-white hover:bg-yellow-400 rounded-xl"
               onClick={() => {
                 setButtonContent(
                   <div role="status">

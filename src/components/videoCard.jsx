@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const VideoCard = ({ video }) => {
   const navigate = useNavigate();
-
+  console.log("video", video);
   const handleVideoClick = () => {
     navigate(`/video/${video.id}`, { state: { video } });
     // window.open(`/video/${video.id}`, "_blank", "noopener,noreferrer");
@@ -12,7 +12,7 @@ const VideoCard = ({ video }) => {
     <div className="w-3/4 mx-auto pb-4 cursor-pointer">
       <div
         onClick={handleVideoClick}
-        className="flex flex-col lg:flex-row w-full bg-white border border-gray-200 shadow hover:bg-stone-100"
+        className="flex flex-col items-center lg:flex-row w-full bg-white border border-gray-200 shadow hover:bg-stone-100"
       >
         <div className="w-full lg:w-1/2 h-40 lg:h-48">
           <video className="object-cover w-full h-full" controls>
