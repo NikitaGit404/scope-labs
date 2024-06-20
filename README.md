@@ -24,6 +24,7 @@ https://drive.google.com/file/d/1WaaJWfMhc0XE-ym2I73Nplj6UEWssK5Q/view?usp=drive
 
 Framework : React
 Styling: Tailwind CSS
+#### user_id used for demo : niki_mistri
 
 - Session storage is used to store user_id
 - Based on user_id, videos are retrieved from the backend that belong to that user and displayed on home page.
