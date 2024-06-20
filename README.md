@@ -11,7 +11,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Video Demo
 
-[![Watch the video]]
 https://drive.google.com/file/d/1WaaJWfMhc0XE-ym2I73Nplj6UEWssK5Q/view?usp=drive_link
 
 ### Screenshots
