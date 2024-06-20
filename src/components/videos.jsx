@@ -21,13 +21,11 @@ const Videos = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    console.log("currentUserId", currentUserId);
     const getvideos = async () => {
       const res = await fetch(
         `https://take-home-assessment-423502.uc.r.appspot.com/api/videos?user_id=${currentUserId}`
       );
       const data = await res.json();
-      console.log("data.videos", data.videos);
       setVideos(data.videos);
     };
     if (currentUserId) {

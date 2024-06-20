@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const VideoCard = ({ video }) => {
   const navigate = useNavigate();
-  console.log("video", video);
   const handleVideoClick = () => {
     navigate(`/video/${video.id}`, { state: { video } });
     // window.open(`/video/${video.id}`, "_blank", "noopener,noreferrer");
